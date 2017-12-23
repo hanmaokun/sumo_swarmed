@@ -1,0 +1,43 @@
+<add> <!-- edited at: Fri Dec 22 14:41:53 2017
+ -->
+   <tlLogic id="node1" type="static" programID="1" offset="0">
+       <phase duration="47" state="GrrrGrrr"/>
+       <phase duration="49" state="rrrrGGrr"/>
+       <phase duration="42" state="rGrrrGrr"/>
+       <phase duration="50" state="rrggrrgg"/>
+   </tlLogic>
+   <tlLogic id="node2" type="static" programID="1" offset="0">
+       <phase duration="19" state="rrrrGGrr"/>
+       <phase duration="40" state="ggrrggrr"/>
+       <phase duration="40" state="GGrrrrrr"/>
+       <phase duration="19" state="rrggrrgg"/>
+   </tlLogic>
+   <tlLogic id="node3" type="static" programID="1" offset="0">
+       <phase duration="9" state="rgrrrgrr"/>
+       <phase duration="18" state="grrrgrrr"/>
+       <phase duration="35" state="rrGGrrGG"/>
+   </tlLogic>
+   <tlLogic id="node4" type="static" programID="1" offset="0">
+       <phase duration="40" state="rgrrrgrr"/>
+       <phase duration="39" state="grrrgrrr"/>
+       <phase duration="43" state="rrrgrrrg"/>
+       <phase duration="7" state="rrrrrrgg"/>
+       <phase duration="35" state="rrgrrrgr"/>
+   </tlLogic>
+   <tlLogic id="node5" type="static" programID="1" offset="0">
+       <phase duration="19" state="rgrrrgrr"/>
+       <phase duration="22" state="grrrgrrr"/>
+       <phase duration="50" state="rrGGrrGG"/>
+   </tlLogic>
+   <tlLogic id="node6" type="static" programID="1" offset="0">
+       <phase duration="21" state="rgrrrgrr"/>
+       <phase duration="37" state="grrrgrrr"/>
+       <phase duration="24" state="rrrgrrrg"/>
+       <phase duration="32" state="rrgrrrgr"/>
+   </tlLogic>
+   <tlLogic id="node7" type="static" programID="1" offset="0">
+       <phase duration="29" state="rgrrrgrr"/>
+       <phase duration="15" state="grrrgrrr"/>
+       <phase duration="20" state="rrGGrrGG"/>
+   </tlLogic>
+</add>
