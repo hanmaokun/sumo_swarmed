@@ -43,6 +43,7 @@ struct logic /* saves each tl_logic with ID, Nº OF PHASES, and STATES of PHASES
 	char * id;
 	int n_phases;
 	char ** phases;
+	int * limits;
 	};
 #endif
 

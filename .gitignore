@@ -4,3 +4,10 @@ MainSeq.o
 *~
 results.txt
 output-*.xml
+cmake-build-debug/
+.idea/
+GvR.txt
+*.o
+output-*
+*.log
+estadistico-fitness.txt

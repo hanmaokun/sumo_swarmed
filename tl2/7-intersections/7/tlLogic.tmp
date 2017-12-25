@@ -1,7 +1,7 @@
-node1 4  GrrrGrrr rrrrGGrr rGrrrGrr rrggrrgg
-node2 4  rrrrGGrr ggrrggrr GGrrrrrr rrggrrgg
-node3 3  rgrrrgrr grrrgrrr rrGGrrGG
-node4 5  rgrrrgrr grrrgrrr rrrgrrrg rrrrrrgg rrgrrrgr
-node5 3  rgrrrgrr grrrgrrr rrGGrrGG
-node6 4  rgrrrgrr grrrgrrr rrrgrrrg rrgrrrgr
-node7 3  rgrrrgrr grrrgrrr rrGGrrGG
+node1 4  gGrggrrggGrggrrg grrggrrggGGggrrg grGggrrggrGggrrg grrggggggrrggggg
+node2 4  grrggrrggGGggrrg gggggrrggggggrrg gGGggrrggrrggrrg grrggggggrrggggg
+node3 3  grGggrrggrGggrrg gGrggrrggGrggrrg grrggggggrrggggg
+node4 5  grGggrrggrGggrrg gGrggrrggGrggrrg grrggrGggrrggrGg grrggrrggrrggGGg grrggGrggrrggGrg
+node5 3  grGggrrggrGggrrg gGrggrrggGrggrrg grrggggggrrggggg
+node6 4  grGggrrggrGggrrg gGrggrrggGrggrrg grrggrGggrrggrGg grrggGrggrrggGrg
+node7 3  grGggrrggrGggrrg gGrggrrggGrggrrg grrggggggrrggggg

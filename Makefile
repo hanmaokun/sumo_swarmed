@@ -24,6 +24,8 @@ SEQ:
 
 	./MainSeq PSO.cfg tl2/2-intersections/2/tlLogic.tmp tl2/2-intersections/2/info.500.twoIntersections.txt tl2/2-intersections/2/tlLogic.500.best-solution.xml  results.txt
 
+DIDI_:
+	./MainSeq PSO_didi.cfg tl2/7-intersections/7/tlLogic.tmp tl2/7-intersections/7/info.6664.sevenIntersections.txt tl2/7-intersections/7/tlLogic.6664.best-solution.xml results_didi.txt
 
 DIDI:
-	./MainSeq PSO_didi.cfg tl2/7-intersections/7/tlLogic.tmp tl2/7-intersections/7/info.xxx.sevenIntersections.txt tl2/7-intersections/7/tlLogic.xxx.best-solution.xml results_didi.txt
+	./MainSeq PSO_didi.cfg tl2/7-intersections/7/tlLogic.withY.tmp tl2/7-intersections/7/info.6664.sevenIntersections.txt tl2/7-intersections/7/tlLogic.6664.best-solution.xml results_didi.txt

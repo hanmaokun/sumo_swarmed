@@ -12,6 +12,8 @@
 #include "PSO.hh"
 #include <ctime>
 
+#define MAX_BUFFER 205
+
 skeleton PSO {
 
 
@@ -59,12 +61,17 @@ skeleton PSO {
             tk=strtok(NULL," ");
             pbm.tl_logic(i).n_phases=atoi(tk);
             pbm.tl_logic(i).phases = new char*[pbm.tl_logic(i).n_phases];
+            pbm.tl_logic(i).limits = new int[pbm.tl_logic(i).n_phases];
             cont=0;
             while (cont < pbm.tl_logic(i).n_phases)
             {
                 tk=strtok(NULL," ");
                 pbm.tl_logic(i).phases[cont] = new char[MAX_BUFFER];
                 n=sprintf(pbm.tl_logic(i).phases[cont],"%s",tk);
+                tk=strtok(NULL," ");
+                //pbm.tl_logic(i).limits[cont] = new int;
+                //n=sprintf(pbm.tl_logic(i).limits[cont],"%d",tk);
+                pbm.tl_logic(i).limits[cont] = atoi(tk);
                 cont++;
             }
         }
@@ -324,6 +331,14 @@ skeleton PSO {
         system("killall -e ns");
     }
 
+    void Solution::check_param_limits(int n_tl, int n_phase){
+        int cur_param_val = (int)(current(n_tl * pbm().n_tl_logic() + n_phase));
+        if (pbm().tl_logic(n_tl).limits[n_phase] == 3){
+            current(n_tl * pbm().n_tl_logic() + n_phase) = 3.0;
+        }else if (cur_param_val < int(pbm().tl_logic(n_tl).limits[n_phase])){
+            current(n_tl * pbm().n_tl_logic() + n_phase) = float(pbm().tl_logic(n_tl).limits[n_phase]);
+        }
+    }
 
     void Solution::best_to_xml(char * file)
     {
@@ -338,12 +353,21 @@ skeleton PSO {
             fs << "   <tlLogic id=\"" <<pbm().tl_logic(i).id << "\" type=\"static\" programID=\"1\" offset=\"0\">" << endl;
             for (int j=0;j<pbm().tl_logic(i).n_phases;j++)
             {
-                if ((int)current(cont)<5)
-                    current(cont)= 5.0;//(double)rand_int(5,60);
-                else if ((int)current(cont)>40)
-                    current(cont)=40.0;//(double)rand_int(5,60);
-                fs << "       <phase duration=\"" << (int)current(cont) << "\" state=\"" << pbm().tl_logic(i).phases[j] << "\"/>" << endl;
-                cont++;
+                int n_tl = i;
+                int n_phase = j;
+                int phase_duration = 0;
+                if (pbm().tl_logic(n_tl).limits[n_phase] == 3){
+                    phase_duration = 3.0;
+                }else if ((int)(current(cont)) < (pbm().tl_logic(n_tl).limits[n_phase])){
+                    current(cont) = int(pbm().tl_logic(n_tl).limits[n_phase]);
+                    phase_duration = current(cont);
+                    cont++;
+                }else {
+                    phase_duration = (int)current(cont);
+                    cont++;
+                }
+
+                fs << "       <phase duration=\"" << phase_duration << "\" state=\"" << pbm().tl_logic(i).phases[j] << "\"/>" << endl;
             }
             fs << "   </tlLogic>" << endl;
         }
@@ -371,12 +395,21 @@ skeleton PSO {
             fs << "   <tlLogic id=\"" <<pbm().tl_logic(i).id << "\" type=\"static\" programID=\"1\" offset=\"0\">" << endl;
             for (int j=0;j<pbm().tl_logic(i).n_phases;j++)
             {
-                if ((int)current(cont)<5)
-                    current(cont)= 5.0;
-                else if ((int)current(cont)>50)
-                    current(cont)=50.0;
-                fs << "       <phase duration=\"" << (int)current(cont) << "\" state=\"" << pbm().tl_logic(i).phases[j] << "\"/>" << endl;
-                cont++;
+                int n_tl = i;
+                int n_phase = j;
+                int phase_duration = 0;
+                if (pbm().tl_logic(n_tl).limits[n_phase] == 3){
+                    phase_duration = 3.0;
+                }else if ((int)(current(cont)) < (pbm().tl_logic(n_tl).limits[n_phase])){
+                    current(cont) = int(pbm().tl_logic(n_tl).limits[n_phase]);
+                    phase_duration = current(cont);
+                    cont++;
+                }else {
+                    phase_duration = (int)current(cont);
+                    cont++;
+                }
+
+                fs << "       <phase duration=\"" << phase_duration << "\" state=\"" << pbm().tl_logic(i).phases[j] << "\"/>" << endl;
             }
             fs << "   </tlLogic>" << endl;
         }
@@ -402,8 +435,8 @@ skeleton PSO {
          */
 
         //# /bin/bash $0=loop.sh $1=c2smalaga.sumo.cfg $2=malaga-alameda/ $3=tl-logic.add.xml $4=output-tripinfos.xml $5./ $6=200 $7=250
-        sprintf(order,"bash loop.sh %s.%d.sumo.cfg tl2/%s/%d/ tlLogic.add.xml output-tripinfos.xml ./ %d %d",
-                pbm().instance(),pbm().n_vehicles(),pbm().path(),pbm().n_tl_logic(),pbm().n_vehicles(),pbm().simulation_time());
+        sprintf(order,"bash loop.sh %s.%d.%d.sumo.cfg tl2/%s/%d/ tlLogic.add.xml output-tripinfos.xml ./ %d %d",
+                pbm().instance(),pbm().n_vehicles(),rand()%10,pbm().path(),pbm().n_tl_logic(),pbm().n_vehicles(),pbm().simulation_time());
 
         //cout << "order: " << order << endl;
         //ds << order << endl;

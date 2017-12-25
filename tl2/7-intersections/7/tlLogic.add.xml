@@ -1,43 +1,68 @@
-<add> <!-- edited at: Fri Dec 22 14:41:53 2017
+<add> <!-- edited at: Mon Dec 25 16:49:31 2017
  -->
    <tlLogic id="node1" type="static" programID="1" offset="0">
-       <phase duration="47" state="GrrrGrrr"/>
-       <phase duration="49" state="rrrrGGrr"/>
-       <phase duration="42" state="rGrrrGrr"/>
-       <phase duration="50" state="rrggrrgg"/>
+       <phase duration="99" state="gGrggrrggGrggrrg"/>
+       <phase duration="3" state="gYrggrrggGrggrrg"/>
+       <phase duration="134" state="grrggrrggGGggrrg"/>
+       <phase duration="3" state="grrggrrggYGggrrg"/>
+       <phase duration="10" state="grGggrrggrGggrrg"/>
+       <phase duration="3" state="grYggrrggrYggrrg"/>
+       <phase duration="42" state="grrggggggrrggggg"/>
+       <phase duration="3" state="grrggyyggrrggyyg"/>
    </tlLogic>
    <tlLogic id="node2" type="static" programID="1" offset="0">
-       <phase duration="19" state="rrrrGGrr"/>
-       <phase duration="40" state="ggrrggrr"/>
-       <phase duration="40" state="GGrrrrrr"/>
-       <phase duration="19" state="rrggrrgg"/>
+       <phase duration="32" state="grrggrrggGGggrrg"/>
+       <phase duration="50" state="gggggrrggggggrrg"/>
+       <phase duration="3" state="gggggrrggyyggrrg"/>
+       <phase duration="71" state="gGGggrrggrrggrrg"/>
+       <phase duration="3" state="gYYggrrggrrggrrg"/>
+       <phase duration="40" state="grrggggggrrggggg"/>
+       <phase duration="3" state="grrggyyggrrggyyg"/>
    </tlLogic>
    <tlLogic id="node3" type="static" programID="1" offset="0">
-       <phase duration="9" state="rgrrrgrr"/>
-       <phase duration="18" state="grrrgrrr"/>
-       <phase duration="35" state="rrGGrrGG"/>
+       <phase duration="10" state="grGggrrggrGggrrg"/>
+       <phase duration="3" state="grYggrrggrYggrrg"/>
+       <phase duration="35" state="gGrggrrggGrggrrg"/>
+       <phase duration="3" state="gYrggrrggYrggrrg"/>
+       <phase duration="48" state="grrggggggrrggggg"/>
+       <phase duration="3" state="grrggyyggrrggyyg"/>
    </tlLogic>
    <tlLogic id="node4" type="static" programID="1" offset="0">
-       <phase duration="40" state="rgrrrgrr"/>
-       <phase duration="39" state="grrrgrrr"/>
-       <phase duration="43" state="rrrgrrrg"/>
-       <phase duration="7" state="rrrrrrgg"/>
-       <phase duration="35" state="rrgrrrgr"/>
+       <phase duration="10" state="grGggrrggrGggrrg"/>
+       <phase duration="3" state="grYggrrggrYggrrg"/>
+       <phase duration="39" state="gGrggrrggGrggrrg"/>
+       <phase duration="3" state="gYrggrrggYrggrrg"/>
+       <phase duration="27" state="grrggrGggrrggrGg"/>
+       <phase duration="3" state="grrggrYggrrggrGg"/>
+       <phase duration="100" state="grrggrrggrrggGGg"/>
+       <phase duration="3" state="grrggrrggrrggGYg"/>
+       <phase duration="60" state="grrggGrggrrggGrg"/>
+       <phase duration="3" state="grrggYrggrrggYrg"/>
    </tlLogic>
    <tlLogic id="node5" type="static" programID="1" offset="0">
-       <phase duration="19" state="rgrrrgrr"/>
-       <phase duration="22" state="grrrgrrr"/>
-       <phase duration="50" state="rrGGrrGG"/>
+       <phase duration="69" state="grGggrrggrGggrrg"/>
+       <phase duration="3" state="grYggrrggrYggrrg"/>
+       <phase duration="43" state="gGrggrrggGrggrrg"/>
+       <phase duration="3" state="gYrggrrggYrggrrg"/>
+       <phase duration="35" state="grrggggggrrggggg"/>
+       <phase duration="3" state="grrggyyggrrggyyg"/>
    </tlLogic>
    <tlLogic id="node6" type="static" programID="1" offset="0">
-       <phase duration="21" state="rgrrrgrr"/>
-       <phase duration="37" state="grrrgrrr"/>
-       <phase duration="24" state="rrrgrrrg"/>
-       <phase duration="32" state="rrgrrrgr"/>
+       <phase duration="75" state="grGggrrggrGggrrg"/>
+       <phase duration="3" state="grYggrrggrYggrrg"/>
+       <phase duration="43" state="gGrggrrggGrggrrg"/>
+       <phase duration="3" state="gYrggrrggYrggrrg"/>
+       <phase duration="10" state="grrggrGggrrggrGg"/>
+       <phase duration="3" state="grrggrYggrrggrYg"/>
+       <phase duration="41" state="grrggGrggrrggGrg"/>
+       <phase duration="3" state="grrggYrggrrggYrg"/>
    </tlLogic>
    <tlLogic id="node7" type="static" programID="1" offset="0">
-       <phase duration="29" state="rgrrrgrr"/>
-       <phase duration="15" state="grrrgrrr"/>
-       <phase duration="20" state="rrGGrrGG"/>
+       <phase duration="36" state="grGggrrggrGggrrg"/>
+       <phase duration="3" state="grYggrrggrYggrrg"/>
+       <phase duration="35" state="gGrggrrggGrggrrg"/>
+       <phase duration="3" state="gYrggrrggYrggrrg"/>
+       <phase duration="60" state="grrggggggrrggggg"/>
+       <phase duration="3" state="grrggyyggrrggyyg"/>
    </tlLogic>
 </add>

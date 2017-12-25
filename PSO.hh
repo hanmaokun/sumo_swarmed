@@ -108,6 +108,7 @@ skeleton PSO
         void to_Solution(char *_cadena_);
 
         void initialization();
+        void check_param_limits(int n_tl, int n_phase);
         void best_to_xml(char * file);
         double fitness();
         double best_fitness();
