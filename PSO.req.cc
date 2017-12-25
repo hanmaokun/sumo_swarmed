@@ -377,6 +377,7 @@ skeleton PSO {
 
     double Solution::fitness()
     {
+        static int num_vehicles[10] = {689, 648, 641, 680, 691, 686, 655, 659, 674, 640};
         double fitness = 0.0;
         int cont = 0;
         fstream file;
@@ -435,8 +436,9 @@ skeleton PSO {
          */
 
         //# /bin/bash $0=loop.sh $1=c2smalaga.sumo.cfg $2=malaga-alameda/ $3=tl-logic.add.xml $4=output-tripinfos.xml $5./ $6=200 $7=250
+        int rand_batch_idx = rand()%10;
         sprintf(order,"bash loop.sh %s.%d.%d.sumo.cfg tl2/%s/%d/ tlLogic.add.xml output-tripinfos.xml ./ %d %d",
-                pbm().instance(),pbm().n_vehicles(),rand()%10,pbm().path(),pbm().n_tl_logic(),pbm().n_vehicles(),pbm().simulation_time());
+                pbm().instance(),pbm().n_vehicles(),rand()%10,pbm().path(),pbm().n_tl_logic(),num_vehicles[rand_batch_idx],pbm().simulation_time());
 
         //cout << "order: " << order << endl;
         //ds << order << endl;
