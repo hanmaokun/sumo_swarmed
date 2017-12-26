@@ -350,7 +350,8 @@ skeleton PSO {
 
         for (int i=0;i<pbm().n_tl_logic();i++)
         {
-            fs << "   <tlLogic id=\"" <<pbm().tl_logic(i).id << "\" type=\"static\" programID=\"1\" offset=\"0\">" << endl;
+            fs << "   <tlLogic id=\"" <<pbm().tl_logic(i).id << "\" type=\"static\" programID=\"1\" offset=\"" << current(cont) << "\">" << endl;
+            cont++;
             for (int j=0;j<pbm().tl_logic(i).n_phases;j++)
             {
                 int n_tl = i;
@@ -377,7 +378,8 @@ skeleton PSO {
 
     double Solution::fitness()
     {
-        static int num_vehicles[10] = {689, 648, 641, 680, 691, 686, 655, 659, 674, 640};
+        static int num_vehicles[10] = {690, 649, 642, 681, 692, 687, 656, 660, 675, 641};
+        static int num_states_in_tl[7] = {4, 4, 3, 5, 3, 4, 3};
         double fitness = 0.0;
         int cont = 0;
         fstream file;
@@ -393,7 +395,16 @@ skeleton PSO {
 
         for (int i=0;i<pbm().n_tl_logic();i++)
         {
-            fs << "   <tlLogic id=\"" <<pbm().tl_logic(i).id << "\" type=\"static\" programID=\"1\" offset=\"0\">" << endl;
+            if(current(cont) < 0){
+                int num_state_in_cur_tl = num_states_in_tl[i];
+                int new_ofs = 0;
+                for(int k=0; k<1+num_state_in_cur_tl; k++){
+                    new_ofs += current(cont + k);
+                }
+                current(cont) = new_ofs;
+            }
+            fs << "   <tlLogic id=\"" <<pbm().tl_logic(i).id << "\" type=\"static\" programID=\"1\" offset=\"" << current(cont) << "\">" << endl;
+            cont++;
             for (int j=0;j<pbm().tl_logic(i).n_phases;j++)
             {
                 int n_tl = i;
