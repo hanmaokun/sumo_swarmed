@@ -395,7 +395,7 @@ skeleton PSO {
 
         for (int i=0;i<pbm().n_tl_logic();i++)
         {
-            while(current(cont) < 0){
+            if(current(cont) < 0){
                 int num_state_in_cur_tl = num_states_in_tl[i];
                 int new_ofs = 0;
                 for(int k=0; k<1+num_state_in_cur_tl; k++){
@@ -485,8 +485,8 @@ skeleton PSO {
 
     void Solution::initialization()
     {
-        int min = 35;
-        int max = 100;//pbm().simulation_time();
+        int min = 5;
+        int max = 50;//pbm().simulation_time();
 
         /* preload with didi default param value. */
         static int default_solution[33] = {0,111,9,43,37,10,28,121,13,38,10,28,134,38,10,34,75,31,19,41,134,48,89,63,105,35,67,52,46,52,30,96,74};
