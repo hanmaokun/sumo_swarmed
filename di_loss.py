@@ -71,8 +71,13 @@ if __name__ == '__main__':
 		spds = vehicle_spd_dict[veh_id]
 		total_stops += stop_times(spds)
 
-	di_score_invese = (wait_steps + 10*total_stops)/len(vehicle_spd_dict.keys())
-	# print("wait steps: " + str(wait_steps) + ", stop times: " + str(total_stops) + ", vehicles: " + str(len(vehicle_spd_dict.keys())) \
-	# 		+ ", INVERSE di score: " + str(di_score_invese) + ", di score: " + str(1000.0/di_score_invese) \
-	# )
-	print(di_score_invese)
+	di_score_invese = (wait_steps + 50*total_stops)/len(vehicle_spd_dict.keys())
+
+	print("wait steps: " + str(wait_steps) + ", stop times: " + str(total_stops) + ", vehicles: " + str(len(vehicle_spd_dict.keys())) \
+			+ ", INVERSE di score: " + str(di_score_invese) + ", di score: " + str(1000.0/di_score_invese) \
+	)
+
+	# store results(fitness) to file
+	fn_res = open("res.txt", 'w')
+	fn_res.write(str(di_score_invese))
+	fn_res.close()
