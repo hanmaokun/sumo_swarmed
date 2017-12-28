@@ -331,15 +331,6 @@ skeleton PSO {
         system("killall -e ns");
     }
 
-    void Solution::check_param_limits(int n_tl, int n_phase){
-        int cur_param_val = (int)(current(n_tl * pbm().n_tl_logic() + n_phase));
-        if (pbm().tl_logic(n_tl).limits[n_phase] == 3){
-            current(n_tl * pbm().n_tl_logic() + n_phase) = 3.0;
-        }else if (cur_param_val < int(pbm().tl_logic(n_tl).limits[n_phase])){
-            current(n_tl * pbm().n_tl_logic() + n_phase) = float(pbm().tl_logic(n_tl).limits[n_phase]);
-        }
-    }
-
     void Solution::best_to_xml(char * file)
     {
         int cont=0;
@@ -378,7 +369,7 @@ skeleton PSO {
 
     double Solution::fitness()
     {
-        static int num_vehicles[10] = {690, 649, 642, 681, 692, 687, 656, 660, 675, 641};
+        static int num_vehicles[10] = {1155, 1111, 1055, 1091, 1160, 1222, 1090, 1076, 1177, 1142};
         static int num_states_in_tl[7] = {4, 4, 3, 5, 3, 4, 3};
         double fitness = 0.0;
         int cont = 0;
@@ -395,6 +386,17 @@ skeleton PSO {
 
         for (int i=0;i<pbm().n_tl_logic();i++)
         {
+            int cur_cycle = 0;
+            int num_state_in_cur_tl = num_states_in_tl[i];
+            int new_ofs = 0;
+            for(int k=1; k<1+num_state_in_cur_tl; k++){
+                cur_cycle += current(cont + k);
+            }
+
+            if (current(cont) >= cur_cycle) {
+                current(cont) -= cur_cycle;
+            }
+
             if(current(cont) < 0){
                 int num_state_in_cur_tl = num_states_in_tl[i];
                 int new_ofs = 0;
@@ -485,8 +487,8 @@ skeleton PSO {
 
     void Solution::initialization()
     {
-        int min = 5;
-        int max = 50;//pbm().simulation_time();
+        int min = 8;
+        int max = 35;//pbm().simulation_time();
 
         /* preload with didi default param value. */
         static int default_solution[33] = {0,111,9,43,37,10,28,121,13,38,10,28,134,38,10,34,75,31,19,41,134,48,89,63,105,35,67,52,46,52,30,96,74};
@@ -495,7 +497,7 @@ skeleton PSO {
         for (int i=0;i<pbm().dimension();i++){
             _current[i] = (double)(default_solution[i]);
             _best[i] = _current[i];
-            _velocity[i] = (double)(rand_int(min,max))/2.0;
+            _velocity[i] = (double)(rand_int(min,max))/1.0;
         }/* end for */
     }
 

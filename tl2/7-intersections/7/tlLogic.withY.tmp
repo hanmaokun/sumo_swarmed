@@ -1,7 +1,7 @@
-node1 8  gGrggrrggGrggrrg 35 gYrggrrggGrggrrg 3 grrggrrggGGggrrg 8 grrggrrggYGggrrg 3 grGggrrggrGggrrg 10 grYggrrggrYggrrg 3 grrggggggrrggggg 35 grrggyyggrrggyyg 3
-node2 7  grrggrrggGGggrrg 8 gggggrrggggggrrg 35 gggggrrggyyggrrg 3 gGGggrrggrrggrrg 8 gYYggrrggrrggrrg 3 grrggggggrrggggg 35 grrggyyggrrggyyg 3
-node3 6  grGggrrggrGggrrg 10 grYggrrggrYggrrg 3 gGrggrrggGrggrrg 35 gYrggrrggYrggrrg 3 grrggggggrrggggg 35 grrggyyggrrggyyg 3
-node4 10  grGggrrggrGggrrg 10 grYggrrggrYggrrg 3 gGrggrrggGrggrrg 35 gYrggrrggYrggrrg 3 grrggrGggrrggrGg 10 grrggrYggrrggrGg 3 grrggrrggrrggGGg 8 grrggrrggrrggGYg 3 grrggGrggrrggGrg 35 grrggYrggrrggYrg 3
-node5 6  grGggrrggrGggrrg 10 grYggrrggrYggrrg 3 gGrggrrggGrggrrg 35 gYrggrrggYrggrrg 3 grrggggggrrggggg 35 grrggyyggrrggyyg 3
-node6 8  grGggrrggrGggrrg 10 grYggrrggrYggrrg 3 gGrggrrggGrggrrg 35 gYrggrrggYrggrrg 3 grrggrGggrrggrGg 10 grrggrYggrrggrYg 3 grrggGrggrrggGrg 35 grrggYrggrrggYrg 3
-node7 6  grGggrrggrGggrrg 10 grYggrrggrYggrrg 3 gGrggrrggGrggrrg 35 gYrggrrggYrggrrg 3 grrggggggrrggggg 35 grrggyyggrrggyyg 3
+node1 8  gGrggrrggGrggrrg 32 gYrggrrggGrggrrg 3 grrggrrggGGggrrg 5 grrggrrggYGggrrg 3 grGggrrggrGggrrg 7 grYggrrggrYggrrg 3 grrggggggrrggggg 32 grrggyyggrrggyyg 3
+node2 7  grrggrrggGGggrrg 8 gggggrrggggggrrg 32 gggggrrggyyggrrg 3 gGGggrrggrrggrrg 5 gYYggrrggrrggrrg 3 grrggggggrrggggg 32 grrggyyggrrggyyg 3
+node3 6  grGggrrggrGggrrg 7 grYggrrggrYggrrg 3 gGrggrrggGrggrrg 32 gYrggrrggYrggrrg 3 grrggggggrrggggg 32 grrggyyggrrggyyg 3
+node4 10  grGggrrggrGggrrg 7 grYggrrggrYggrrg 3 gGrggrrggGrggrrg 32 gYrggrrggYrggrrg 3 grrggrGggrrggrGg 7 grrggrYggrrggrGg 3 grrggrrggrrggGGg 5 grrggrrggrrggGYg 3 grrggGrggrrggGrg 32 grrggYrggrrggYrg 3
+node5 6  grGggrrggrGggrrg 7 grYggrrggrYggrrg 3 gGrggrrggGrggrrg 32 gYrggrrggYrggrrg 3 grrggggggrrggggg 32 grrggyyggrrggyyg 3
+node6 8  grGggrrggrGggrrg 7 grYggrrggrYggrrg 3 gGrggrrggGrggrrg 32 gYrggrrggYrggrrg 3 grrggrGggrrggrGg 7 grrggrYggrrggrYg 3 grrggGrggrrggGrg 32 grrggYrggrrggYrg 3
+node7 6  grGggrrggrGggrrg 7 grYggrrggrYggrrg 3 gGrggrrggGrggrrg 32 gYrggrrggYrggrrg 3 grrggggggrrggggg 32 grrggyyggrrggyyg 3
