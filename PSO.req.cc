@@ -491,7 +491,7 @@ skeleton PSO {
         int max = 35;//pbm().simulation_time();
 
         /* preload with didi default param value. */
-        static int default_solution[33] = {0,111,9,43,37,10,28,121,13,38,10,28,134,38,10,34,75,31,19,41,134,48,89,63,105,35,67,52,46,52,30,96,74};
+        static int default_solution[33] = {0,109,6,40,34,10,28,118,10,35,10,25,131,35,10,31,72,28,16,38,134,45,86,60,105,32,64,49,43,52,27,93,71};
 
         /*dimension=number of phases*/
         for (int i=0;i<pbm().dimension();i++){
