@@ -369,7 +369,7 @@ skeleton PSO {
 
     double Solution::fitness()
     {
-        static int num_vehicles[10] = {1155, 1111, 1055, 1091, 1160, 1222, 1090, 1076, 1177, 1142};
+        static int num_vehicles[10] = {747, 701, 702, 733, 729, 765, 708, 722, 726, 716};
         static int num_states_in_tl[7] = {4, 4, 3, 5, 3, 4, 3};
         double fitness = 0.0;
         int cont = 0;
@@ -491,7 +491,8 @@ skeleton PSO {
         int max = 35;//pbm().simulation_time();
 
         /* preload with didi default param value. */
-        static int default_solution[33] = {0,109,6,40,34,10,28,118,10,35,10,25,131,35,10,31,72,28,16,38,134,45,86,60,105,32,64,49,43,52,27,93,71};
+        /* 0,108,6,40,34,10,28,118,10,35,10,25,131,35,10,31,72,28,16,38,134,45,86,60,105,32,64,49,43,52,27,93,71 */
+        static int default_solution[33] = {0,108,6,40,34,10,28,118,10,35,10,25,131,35,10,31,72,28,16,38,134,45,86,60,105,32,64,49,43,52,27,93,71};
 
         /*dimension=number of phases*/
         for (int i=0;i<pbm().dimension();i++){

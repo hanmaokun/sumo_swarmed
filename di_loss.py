@@ -13,11 +13,15 @@ def stop_times(speed_list):
 	cur_state = STARTED
 	prev_state = STARTED
 	stops = 0
+	stop_time = 0
 	for k, spd in enumerate(speed_list):
 		if spd == 0:
 			if prev_state == RUNNING:
 				stops += 1
+				stop_time += 1
 				cur_state = STOPPED
+			if prev_state == STOPPED:
+				stop_time += 1
 		elif prev_state == STOPPED:
 			cur_state = RUNNING
 		elif prev_state == STARTED:
@@ -25,7 +29,7 @@ def stop_times(speed_list):
 
 		prev_state = cur_state
 
-	return stops
+	return stop_time, stops
 
 if __name__ == '__main__':
 	random.seed(100)
@@ -38,12 +42,15 @@ if __name__ == '__main__':
 	#calculate wait times
 	trip_file = args.trip
 	wait_steps = 0
+	time_loss = 0
 	net_trip = ET.ElementTree(file=trip_file)
 	net_trip_root = net_trip.getroot()
 	tripinfos = net_trip_root.findall('tripinfo')
 	for tripinfo in tripinfos:
 		per_wait_steps = tripinfo.attrib['waitSteps']
 		wait_steps += int(per_wait_steps)
+		per_time_loss = tripinfo.attrib['timeLoss']
+		time_loss += float(per_time_loss)
 
 	#calculate stop times of all vehicle
 	vehicle_spd_dict = {}
@@ -67,14 +74,17 @@ if __name__ == '__main__':
 						vehicle_spd_dict[veh_id].append(float(spd))
 
 	total_stops = 0
+	total_stop_time = 0
 	for veh_id in vehicle_spd_dict.keys():
 		spds = vehicle_spd_dict[veh_id]
-		total_stops += stop_times(spds)
+		stop_time, stops = stop_times(spds)
+		total_stops += stops
+		total_stop_time += stop_time
 
-	di_score_invese = (wait_steps + 50*total_stops)/len(vehicle_spd_dict.keys())
+	di_score_invese = (time_loss + 100*total_stops)/len(vehicle_spd_dict.keys())
 
-	print("wait steps: " + str(wait_steps) + ", stop times: " + str(total_stops) + ", vehicles: " + str(len(vehicle_spd_dict.keys())) \
-			+ ", INVERSE di score: " + str(di_score_invese) + ", di score: " + str(1000.0/di_score_invese) \
+	print("time loss: " + str(time_loss) + ", wait steps: " + str(wait_steps) + ", stop time: " + str(total_stop_time) + ", stops: " + str(total_stops) + ", vehicles: " + str(len(vehicle_spd_dict.keys())) \
+			+ ", di_score_inverse: " + str(di_score_invese) + ", di_score: " + str(1000.0/di_score_invese) \
 	)
 
 	# store results(fitness) to file
