@@ -393,18 +393,16 @@ skeleton PSO {
                 cur_cycle += current(cont + k);
             }
 
-            if (current(cont) >= cur_cycle) {
-                current(cont) -= cur_cycle;
+            for(int k=1; k<5; k++) {
+                if (current(cont) >= cur_cycle) {
+                    current(cont) -= cur_cycle;
+                }
+
+                if(current(cont) < 0){
+                    current(cont) += cur_cycle;
+                }
             }
 
-            if(current(cont) < 0){
-                int num_state_in_cur_tl = num_states_in_tl[i];
-                int new_ofs = 0;
-                for(int k=0; k<1+num_state_in_cur_tl; k++){
-                    new_ofs += current(cont + k);
-                }
-                current(cont) = new_ofs;
-            }
             fs << "   <tlLogic id=\"" <<pbm().tl_logic(i).id << "\" type=\"static\" programID=\"1\" offset=\"" << current(cont) << "\">" << endl;
             cont++;
             for (int j=0;j<pbm().tl_logic(i).n_phases;j++)
@@ -487,8 +485,8 @@ skeleton PSO {
 
     void Solution::initialization()
     {
-        int min = 8;
-        int max = 35;//pbm().simulation_time();
+        int min = 1;
+        int max = 20;//pbm().simulation_time();
 
         /* preload with didi default param value. */
         /* 0,108,6,40,34,10,28,118,10,35,10,25,131,35,10,31,72,28,16,38,134,45,86,60,105,32,64,49,43,52,27,93,71 */
